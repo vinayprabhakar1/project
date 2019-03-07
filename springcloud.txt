@@ -1,0 +1,12 @@
+https://docs.spring.io/spring-cloud-task/docs/2.0.0.RELEASE/reference/htmlsingle/#getting-started
+https://github.com/spring-cloud/spring-cloud-dataflow/tree/1.7.x
+
+java -jar spring-cloud-dataflow-server-local-1.7.1.RELEASE.jar 
+java -jar spring-cloud-dataflow-shell-1.7.1.RELEASE.jar --dataflow.uri=http://localhost:9395
+
+app register --name consumer_insight_automation --type task --uri file:/export/home/d360npi_cia/vishakh/jars/automation-0.0.1-SNAPSHOT.jar
+task create consumer_insight_automation --definition consumer_insight_automation
+task launch consumer_insight_automation
+
+task destroy consumer_insight_automation
+app unregister consumer_insight_automation --type task
